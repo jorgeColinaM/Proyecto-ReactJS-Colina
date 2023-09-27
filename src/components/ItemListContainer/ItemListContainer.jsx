@@ -4,9 +4,10 @@ import './ItemListContainer.css'
 const ItemListContainer = ({greeting}) => {
 
     return (
-        <div > 
-            <h4>{greeting}</h4> 
+        <div className="greeting">
+            <h1>{greeting}</h1>
         </div>
+        
     );
 
 };

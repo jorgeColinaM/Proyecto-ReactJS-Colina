@@ -1,10 +1,10 @@
-import Navbar from "./components/navbar/NavBar";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import LayoutComponent from "./components/LayoutComponent/LayoutComponent"
 
 function App() {
 return (
-<Navbar />,
-<ItemListContainer greeting="VidaNova, experiencia nueva, vida nueva. ¡Sean bienvenidos!"/>
+    
+    <LayoutComponent />
+    
 )};
 
 export default App;

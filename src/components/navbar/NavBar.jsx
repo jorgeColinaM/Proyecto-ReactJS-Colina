@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import BurguerButton from './BurguerButton'
-import NavContainer from './NavBar'
-import BgDiv from './NavBar'
+import CartWidget from '../CartWidget/CartWidget'
+import './NavBar.css'
 
-function Navbar() {
-
+const Navbar = () => {
   const [clicked, setClicked] = useState(false)
   const handleClick = () => {
     //cuando esta true lo pasa a false y viceversa
@@ -12,20 +10,16 @@ function Navbar() {
   }
   return (
     <>
-      <NavContainer>
+      <nav>
         <h2>Café <span>Vidanova</span></h2>
-        <div className={`links ${clicked ? 'active' : ''}`}>
+        <div className="links">
           <a onClick={handleClick} href="#">Home</a>
-          <a onClick={handleClick} href="#">Shop</a>
+          <a onClick={handleClick} href="#">Service</a>
           <a onClick={handleClick} href="#">About-Us</a>
           <a onClick={handleClick} href="#">Contact</a>
-          <a onClick={handleClick} href="#"></a>
+          <a onClick={handleClick} href="#">{< CartWidget />}</a>
         </div>
-        <div className='burguer'>
-          <BurguerButton clicked={clicked} handleClick={handleClick} />
-        </div>
-        <BgDiv className={`initial ${clicked ? ' active' : ''}`}></BgDiv>
-      </NavContainer>
+      </nav>
     </>
   )
 }
