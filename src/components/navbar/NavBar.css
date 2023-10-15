@@ -1,27 +1,29 @@
-nav {
+.container{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+.container .nav {
     padding: 0.7rem;
     background-color: #333;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  nav h2 {
-    color: white;
-    font-weight: 400;
-  }
-  
-  nav h2 span {
-    font-weight: bold;
-  }
-  
-  nav a {
     color: white;
     text-decoration: none;
-    margin-right: 1rem;
-  }
+}
   
-  nav .links {
+.container .nav .nav__brand h2 {
+    color: white;
+    font-weight: 400;
+}
+  
+.container .nav .nav__brand h2 span {
+    font-weight: bold;
+}
+  
+.container .nav .links {
     position: absolute;
     top: -700px;
     left: -2000px;
@@ -34,52 +36,57 @@ nav {
     align-items: center;
     display: flex;
     margin-right: 1rem;
-  }
+}
   
-  nav .links a {
+.container .nav .links .nav__list li {
     color: white;
     font-size: 2rem;
     display: block;
+}
+  
+@media (min-width: 768px) {
+  .container .nav .links {
+    position: initial;
+    margin: 0;
   }
   
-  @media (min-width: 768px) {
-    nav .links {
-      position: initial;
-      margin: 0;
-    }
-  
-    nav .links a {
-      font-size: 1rem;
-      color: white;
-      display: inline;
-    }
-  }
-  
-  nav .links.active {
-    width: 100%;
-    display: block;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    top: 30%;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
-  
-  nav .links.active a {
-    font-size: 2rem;
-    margin-top: 1rem;
+  .container .nav .links .nav__list li {
+    font-size: 1rem;
     color: white;
+    display: inline;
+  }
+}
+  
+.container .nav .links.active {
+  width: 100%;
+  display: block;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+  left: 0;
+  right: 0;
+  text-align: center;
   }
   
-  nav .burguer {
-    display: none;
+.container .nav .links.active li {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
+@media (min-width: 992px){
+ .container {
+    max-width: 100%;
   }
+}
+@media (min-width: 768px){
+.container {
+     max-width: 100%; 
+}}
+@media (min-width: 576px){
+.container {
+    max-width: 100%;
+}}
   
-  @media (min-width: 768px) {
-    nav .burguer {
-      display: none;
-    }
-  }
+
   
