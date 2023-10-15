@@ -17,15 +17,16 @@ return (
     <BrowserRouter>
     <Navbar />
     <Routes>
-      < Route path='/' element={< Home />} />
+      < Route path='/' element={<LayoutComponent />} />
       < Route path='/category/:categoryId' element={< ItemListContainer />} />
+      < Route path='/category' element={< ItemListContainer />} />
       < Route path='/aboutUs' element={< AboutUs />} />
       < Route path='/contact' element={< Contact />} />
       < Route path='/detail/:detailId' element={<ItemDetailContainer/>} />
       < Route path='/cart' element={< CartWidget />} />
     </Routes>
 
-    <LayoutComponent />
+    
     
     </BrowserRouter>
 
