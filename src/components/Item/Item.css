@@ -1,9 +1,0 @@
-.Product{
-    display: block;
-    width: 150px;
-}
-.Product image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}

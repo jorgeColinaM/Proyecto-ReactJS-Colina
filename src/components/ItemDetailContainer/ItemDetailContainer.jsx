@@ -1,37 +1,49 @@
 import React, { useState, useEffect } from 'react'
-import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom';
-
-const Products = [
-    {id: 1, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-    {id: 2, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-    {id: 3, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-    {id: 4, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-    {id: 5, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-    {id: 6, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-    {id: 7, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-    {id: 8, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-    {id: 9, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-    {id:10, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-    ]
+import PRODUCTS from '../../shared/constans';
+import ItemCount from '../ItemCount/ItemCount';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
 
 const ItemDetailContainer = () => {
 
   const [data, setData] = useState({});
   const {detailId} = useParams();
+  const onAdd = (quantity) => {
+    console.log(`compraste ${quantity} unidades`);}
 
   useEffect(() => {
     const getData = new Promise(resolve => setTimeout(() => {
-        resolve(Products);
-    }, 1000));
+        resolve(PRODUCTS);
+    }, 1000)); 
 
     getData.then(res => setData(res.find(comida => comida.id === parseInt(detailId))));
   }, [])
   
-  
-  
     return (
-    <ItemDetail data={data}/>
+      <>
+      <Card className='card__container' sx={{ maxWidth: 345}}>
+      <CardMedia className='card__img'
+        sx={{ height: 150}}
+        image= {`${data.image}`}
+        title={data.title}
+      />
+      <CardContent>
+        <Typography className='card__title' gutterBottom variant="h5" component="div">
+        {data.title}
+        </Typography>
+        <Typography className='card__description' variant="body2" color="text.secondary">
+          description
+        </Typography>
+      </CardContent>
+      <CardActions className='card__buttonsEnd'>
+      <ItemCount initial={1} stock={5} onAdd={onAdd} />
+      </CardActions>
+    </Card>
+    </>
   );
 }
 

@@ -1,0 +1,16 @@
+.card__container{
+    text-decoration: none;
+}
+.css-x3vexg-MuiGrid2-root{
+    padding: 70px 20px 40px 20px;
+}
+.card__container .card__buttonsEnd .Product{
+    display: block;
+    width: 150px;
+    height: 35px;
+}
+.card__container .card__buttonsEnd .Product__B{
+    color: gray;
+}
+
+

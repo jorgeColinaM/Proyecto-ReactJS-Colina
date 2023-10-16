@@ -1,22 +1,11 @@
 import React,{useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import './ItemListContainer.css'
-import ItemList from '../ItemList/ItemList'
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Unstable_Grid2';
+import ProductCart from '../ProductCart/ProductCart';
+import PRODUCTS from "../../shared/constans";
 
-const Products = [
-{id: 1, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-{id: 2, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-{id: 3, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-{id: 4, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-{id: 5, image: "./images/Foto crossfit.webp", title: "Comida", category: "comida"},
-{id: 6, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-{id: 7, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-{id: 8, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-{id: 9, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-{id:10, image: "./images/Foto crossfit.webp", title: "Bebida", category: "bebida"},
-]
-
-const ItemListContainer = ({greeting}) => {
+const LayoutGrid = () => {
 
     const [data, setData] = useState([]);
     
@@ -25,7 +14,7 @@ const ItemListContainer = ({greeting}) => {
     useEffect(() => {
         const getData = new Promise(resolve => {
             setTimeout(() => {
-                resolve(Products)
+                resolve(PRODUCTS)
             }, 1000);
         })
         if (categoryId) {
@@ -34,18 +23,18 @@ const ItemListContainer = ({greeting}) => {
         getData.then(res => setData(res))
     }, [categoryId])
 
-    
-
-    return (
-        <>
-        <div className="greeting">
-            <h1>{greeting}</h1>
-        </div>
-        <ItemList data={data}/>
-        </>
-        
-    );
-
-};
-
-export default ItemListContainer
+  return (
+  <>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        {data.map(Product => 
+          <Grid xs={3}>
+            <ProductCart info={Product} />
+          </Grid>
+        )}
+      </Grid>
+    </Box>
+  </>
+  );
+}
+export default LayoutGrid;

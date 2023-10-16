@@ -1,28 +1,60 @@
-import CartWidget from '../CartWidget/CartWidget'
+import * as React from 'react';
+import NavBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom'
 import './NavBar.css'
-import { NavLink } from 'react-router-dom'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const Navbar = () => {
-  
+  const darkTheme = createTheme({
+    palette: {
+      mode: 'dark',
+      text: {
+        primary: '#fff'
+      },
+    },
+
+  });
+
+
+ const Navbar = () => {
   return (
     <>
-    <div className='container'>
-      <nav className='nav'>
-        <div className="nav__brand">
-          <h2>Café <span>Vidanova</span></h2>
-        </div>
-        <div className="links">
-          <ul className="nav__list">
-            <li><NavLink to='/'>Home</NavLink></li>
-            <li><NavLink to='/category/:categoryId'>Category</NavLink></li>
-            <li><NavLink to='/aboutUs'>About-Us</NavLink></li>
-            <li><NavLink to='/contact'>Contact</NavLink></li>
-            <li><NavLink to='/cart'>{< CartWidget />}</NavLink></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-    </>
-  )}
+    
+   <ThemeProvider theme={darkTheme}>
+      
+   <Box sx={{ flexGrow: 1 }}>
+      <NavBar position="static" color="primary">
+        <Toolbar className="container">
+          <Typography className="nav__brand" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Café Vidanova
+          </Typography>
+          <div className='nav__links'>
+          <Link to="/">
+          <Button variant="text" color="inherit">Home</Button>
+          </Link>
+          <Link to='/aboutUs'>
+          <Button variant="text" color="inherit">About-Us</Button>
+          </Link>
+          <Link to="/contact">
+          <Button variant="text" color="inherit">Contact</Button>
+          </Link>
+          <Link to="/cart">
+          <IconButton aria-label="shopping cart">
+              <ShoppingCartIcon />
+          </IconButton>
+          </Link>
+          </div>
+        </Toolbar>
+      </NavBar>
+    </Box>
 
-export default Navbar
+    </ThemeProvider>
+    </>
+  );
+}
+export default Navbar;
