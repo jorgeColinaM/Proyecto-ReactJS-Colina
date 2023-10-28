@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext} from 'react'
 import { useParams } from 'react-router-dom';
-import PRODUCTS from '../../shared/constans';
+import {PRODUCTS, SelectedProducts} from '../../shared/constans';
 import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import CartContext from '../CartContext/CartContext'
 
 const ItemDetailContainer = () => {
 
+  const {quantity, setQuantity} = useContext(CartContext);
   const [data, setData] = useState({});
   const {detailId} = useParams();
-  const onAdd = (quantity) => {
-    console.log(`compraste ${quantity} unidades`);}
 
   useEffect(() => {
     const getData = new Promise(resolve => setTimeout(() => {
@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
         </Typography>
       </CardContent>
       <CardActions className='card__buttonsEnd'>
-      <ItemCount initial={1} stock={5} onAdd={onAdd} />
+      <ItemCount initial={1} product={data}/>
       </CardActions>
     </Card>
     </>

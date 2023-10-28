@@ -28,8 +28,8 @@ const ProductCart = ({info}) => {
       </Typography>
     </CardContent>
     <CardActions className='card__buttonsEnd'>
-    <Link to={`/category/${info.category}`} className='Product'><Button className='Product__B'>Categoría</Button></Link>
       <Link to={`/detail/${info.id}`} className='Product'><Button className='Product__B'>Detalles</Button></Link>
+      <Link to={`/category/${info.category}`} className='Product'><Button className='Product__B'>Categoría</Button></Link>
     </CardActions>
   </Card>
   </>

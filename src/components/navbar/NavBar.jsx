@@ -7,8 +7,7 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom'
 import './NavBar.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from '../CartWidget/CartWidget';
 
   const darkTheme = createTheme({
     palette: {
@@ -37,6 +36,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
           <Link to="/">
           <Button variant="text" color="inherit">Home</Button>
           </Link>
+          <Link to='/category'>
+          <Button variant="text" color="inherit">Category</Button>
+          </Link>
           <Link to='/aboutUs'>
           <Button variant="text" color="inherit">About-Us</Button>
           </Link>
@@ -44,9 +46,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
           <Button variant="text" color="inherit">Contact</Button>
           </Link>
           <Link to="/cart">
-          <IconButton aria-label="shopping cart">
-              <ShoppingCartIcon />
-          </IconButton>
+          <CartWidget />
           </Link>
           </div>
         </Toolbar>
