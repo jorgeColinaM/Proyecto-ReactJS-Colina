@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext} from 'react'
 import { useParams } from 'react-router-dom';
-import {PRODUCTS, SelectedProducts} from '../../shared/constans';
+import {PRODUCTS} from '../../shared/constans';
 import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';

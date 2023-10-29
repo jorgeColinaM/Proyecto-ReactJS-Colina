@@ -17,7 +17,7 @@ export const CartWidget = () => {
       <IconButton aria-label="shopping cart">
         <ShoppingCartIcon />
       </IconButton>
-      <span>{quantity}</span>
+      <span>{totalProducts}</span>
     </div>
     
     </>

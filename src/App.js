@@ -2,10 +2,10 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AboutUs from './components/AboutUs/AboutUs'
 import Contact from './components/Contact/Contact'
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
 import Navbar from "./components/NavBar/NavBar"
 import LayoutGrid from "./components/ItemListContainer/ItemListContainer"
 import './App.css'
+import ItemDetail from './components/ItemDetail/ItemDetail'
 
 
 function App() {
@@ -20,7 +20,7 @@ return (
       < Route path='/category/:categoryId' element={<LayoutGrid/>} />
       < Route path='/aboutUs' element={< AboutUs />} />
       < Route path='/contact' element={< Contact />} />
-      < Route path='/detail/:detailId' element={<ItemDetailContainer/>} />
+      < Route path='/detail/:detailId' element={<ItemDetail/>} />
     </Routes>
 
     </BrowserRouter>
