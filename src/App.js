@@ -5,7 +5,7 @@ import Contact from './components/Contact/Contact'
 import Navbar from "./components/NavBar/NavBar"
 import LayoutGrid from "./components/ItemListContainer/ItemListContainer"
 import './App.css'
-import ItemDetail from './components/ItemDetail/ItemDetail'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 
 
 function App() {
@@ -20,7 +20,7 @@ return (
       < Route path='/category/:categoryId' element={<LayoutGrid/>} />
       < Route path='/aboutUs' element={< AboutUs />} />
       < Route path='/contact' element={< Contact />} />
-      < Route path='/detail/:detailId' element={<ItemDetail/>} />
+      < Route path='/detail/:detailId' element={<ItemDetailContainer/>} />
     </Routes>
 
     </BrowserRouter>

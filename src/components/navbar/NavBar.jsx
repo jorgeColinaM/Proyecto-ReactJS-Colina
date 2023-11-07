@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 import './NavBar.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CartWidget from '../CartWidget/CartWidget';
+import Cart from '../Cart/Cart';
+
 
   const darkTheme = createTheme({
     palette: {
@@ -46,7 +48,8 @@ import CartWidget from '../CartWidget/CartWidget';
           <Button variant="text" color="inherit">Contact</Button>
           </Link>
           <Link to="/cart">
-          <CartWidget />
+          
+          <Cart/>
           </Link>
           </div>
         </Toolbar>

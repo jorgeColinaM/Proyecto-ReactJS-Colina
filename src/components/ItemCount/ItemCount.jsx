@@ -46,7 +46,7 @@ export const ItemCount = ({initial, stock, product}) => {
 
         </ButtonGroup>
        
-        <Button variant="outlined" disabled={stock<=0} onClick={() => setQuantity(++count)}>Agregar al carrito</Button>
+        <Button variant="outlined" disabled={stock<=0} onClick={() => setQuantity(count+1)}>Agregar al carrito</Button>
 
         </div>
         </>
