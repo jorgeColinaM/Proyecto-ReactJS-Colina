@@ -1,12 +1,10 @@
-import React, { useState, useEffect, useContext} from 'react'
+import React, { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import {PRODUCTS} from '../../shared/constans';
-import {CartContext} from '../CartContext/CartContext'
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
 
-  const {quantity, setQuantity} = useContext(CartContext);
   const [data, setData] = useState({});
   const {detailId} = useParams();
 
@@ -19,7 +17,7 @@ const ItemDetailContainer = () => {
   }, [])
   
     return (
-      <ItemDetail data={data}/>
+        <ItemDetail data={data}/>
   );
 }
 

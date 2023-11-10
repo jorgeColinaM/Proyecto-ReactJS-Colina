@@ -7,7 +7,7 @@ export const PRODUCTS = [
     {id: 6, price: 250, image: "./productos-img/frutal brownie.png", title: "Brownie", category: "comida"},
     {id: 7, price: 10, image: "./productos-img/bizcochos.png", title: "Bizcochos", category: "comida"},
     {id: 8, price: 260, image: "./productos-img/tiramizu.jpg", title: "Tiramizu", category: "comida"},
-    {id: 9, price: 150, image: "./productos-img/capuccino frio.png", title: "Capuccino frío", category: "bebida"},
+    {id: 9, price: 150, image: "./productos-img/capuccino frio.png", title: "Capuccino frío", category: "bebida fria"},
     {id:10, price: 210, image: "./productos-img/frappe.jpg", title: "Frappe", category: "bebida fria"},
     {id:11, price: 150, image: "./productos-img/Latte frio.png", title: "Latte frío", category: "bebida fria"},
     {id:12, price: 190, image: "./productos-img/Mocca frio.png", title: "Mocca frío", category: "bebida fria"},
@@ -20,6 +20,7 @@ export const PRODUCTS = [
     {id:19, price: 190, image: "./productos-img/sinfonia.png", title: "Sinfonía", category: "comida"},
     {id:20, price: 160, image: "./productos-img/mocca.png", title: "Mocca", category: "bebida"},
     ]
+    
 
 export const SelectedProducts = []
 

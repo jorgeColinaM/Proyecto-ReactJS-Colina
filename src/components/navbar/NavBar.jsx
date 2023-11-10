@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 import './NavBar.css'
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CartWidget from '../CartWidget/CartWidget';
-import Cart from '../Cart/Cart';
 
 
   const darkTheme = createTheme({
@@ -36,20 +35,22 @@ import Cart from '../Cart/Cart';
           </Typography>
           <div className='nav__links'>
           <Link to="/">
-          <Button variant="text" color="inherit">Home</Button>
+          <Button variant="text" color="inherit">Inicio</Button>
           </Link>
-          <Link to='/category'>
-          <Button variant="text" color="inherit">Category</Button>
+          <Link to='/categories'>
+          <Button variant="text" color="inherit">Categorias</Button>
           </Link>
           <Link to='/aboutUs'>
-          <Button variant="text" color="inherit">About-Us</Button>
+          <Button variant="text" color="inherit">Nosotros</Button>
           </Link>
           <Link to="/contact">
-          <Button variant="text" color="inherit">Contact</Button>
+          <Button variant="text" color="inherit">Contacto</Button>
+          </Link>
+          <Link to="/checkout">
+          <Button variant="text" color="inherit">Checkout</Button>
           </Link>
           <Link to="/cart">
-          
-          <Cart/>
+          <CartWidget/>
           </Link>
           </div>
         </Toolbar>

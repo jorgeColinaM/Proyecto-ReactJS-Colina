@@ -6,16 +6,13 @@ import Chip from '@mui/material/Chip';
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import CartContext from '../CartContext/CartContext';
+import { CartContext } from '../../CartContext/CartContext';
 
 export const ItemCount = ({initial, stock, product}) => {
 
-    let {quantity, setQuantity} = useContext(CartContext);
+    const {addProduct}= useContext(CartContext);
+    
     const [count, setCount] = useState(parseInt(initial));
-    const onAdd = (product, quantity) => {
-        console.log(`compraste ${quantity} unidades de ${product.toString()}`);
-        setQuantity(++quantity)
-      }
 
     const decrease = () =>  {
         setCount(count - 1);
@@ -46,7 +43,7 @@ export const ItemCount = ({initial, stock, product}) => {
 
         </ButtonGroup>
        
-        <Button variant="outlined" disabled={stock<=0} onClick={() => setQuantity(count+1)}>Agregar al carrito</Button>
+        <Button variant="outlined" disabled={stock<=0} onClick={() => addProduct(product, count) }>Agregar al carrito</Button>
 
         </div>
         </>

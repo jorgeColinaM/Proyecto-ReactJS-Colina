@@ -6,14 +6,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
+
 const ItemDetail = ({data}) => {
+
   return (
     <>
-      
       <Card className='card__container' sx={{ maxWidth: 345}}>
       <CardMedia className='card__img'
         sx={{ height: 150}}
-        image= {`${data.image}`}
+        image= {data.image}
         title={data.title}
       />
       <CardContent>
@@ -25,11 +26,11 @@ const ItemDetail = ({data}) => {
         </Typography>
       </CardContent>
       <CardActions className='card__buttonsEnd'>
-      <ItemCount initial={1} product={data}/>
+          <ItemCount initial={1} product={data}/>
       </CardActions>
     </Card>
     </>
   )
 }
 
-export default ItemDetail
+export default ItemDetail;

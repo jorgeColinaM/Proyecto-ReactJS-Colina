@@ -4,7 +4,7 @@ a:-webkit-any-link {
     cursor: pointer;
 }
 .nav__links{
-  width: 400px;
+  width: 530px;
   display: flex;
   justify-content: center;
   align-items: center;
