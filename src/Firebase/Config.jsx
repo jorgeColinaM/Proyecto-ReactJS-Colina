@@ -1,4 +1,7 @@
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import Checkout from "../components/Checkout/Checkout";
+export const db = getFirestore(Checkout)
 
 const firebaseConfig = {
   apiKey: "AIzaSyArkxIRkJC-rpdMyDDhdzh-l5r59sOe1sY",

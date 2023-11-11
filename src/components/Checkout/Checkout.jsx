@@ -1,18 +1,17 @@
-import "./Checkout.css"
-
 import { useContext, useState } from "react";
-import { CartContext } from "../../context/CartContext";
-import { Timestamp, writeBatch } from "firebase/firestore";
-import { db } from "../../App";
+import { Timestamp} from "firebase/firestore";
+import { db } from "../../Firebase/Config";
 import CheckoutForm from "./CheckoutForm";
 import { collection, addDoc } from "firebase/firestore";
 import { nanoid } from "nanoid";
+import "./Checkout.css"
+import { CartContext } from '../../CartContext/CartContext';
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
 
-  const { cart, total, clearCart } = useContext(CartContext);
+  const { cart, total, removeProducts } = useContext(CartContext);
 
   const createOrder = async ({ name, phone, email }) => {
     setLoading(true);
@@ -29,20 +28,13 @@ const Checkout = () => {
         date: Timestamp.fromDate(new Date()),
       };
 
-      // Reference to the 'orders' collection
       const ordersRef = collection(db, "orders");
-
-      // Add the order to the 'orders' collection
       const orderDocRef = await addDoc(ordersRef, objOrder);
-
-      // Generate a unique order ID
       const orderId = nanoid();
 
-      // Update the state with the order ID
       setOrderId(orderId);
 
-      // Clear the cart after creating the order
-      clearCart();
+      removeProducts();
     } catch (error) {
       console.error("Error creating order:", error);
     } finally {

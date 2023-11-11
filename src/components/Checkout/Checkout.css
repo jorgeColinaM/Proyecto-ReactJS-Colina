@@ -1,0 +1,30 @@
+.Button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition:#fff5 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; 
+    height: 50px; 
+    padding: 10px; 
+    margin-top: 10px;
+
+}
+
+  
+  .Button:hover {
+    background-color: #ff4637;
+  }
+  
+.Label{
+    margin: 10px;
+}
+
+.input{
+    margin: 10px;
+}

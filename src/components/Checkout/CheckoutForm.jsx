@@ -9,7 +9,7 @@ const CheckoutForm = ({ onConfirm }) => {
   const handleConfirm = (event) => {
     event.preventDefault();
 
-    console.log("Submit button clicked"); // Add this line for debugging
+    console.log("Submit button clicked");
 
     const userData = {
       name,
@@ -17,12 +17,9 @@ const CheckoutForm = ({ onConfirm }) => {
       email,
     };
 
-    console.log("User data:", userData); // Add this line for debugging
+    console.log("User data:", userData); 
 
-    // Call the onConfirm function to process the order
     onConfirm(userData);
-
-    // Clear the form inputs by resetting their values
     setName("");
     setPhone("");
     setEmail("");

@@ -9,6 +9,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart'
 import { CartProvider } from './CartContext/CartContext'
 import Categories from './components/Category/Category'
+import Checkout from './components/Checkout/Checkout'
+
 
 function App() {
 return (
@@ -23,8 +25,9 @@ return (
       < Route path='/aboutUs' element={< AboutUs />} />
       < Route path='/contact' element={< Contact />} />
       < Route path='/detail/:detailId' element={<ItemDetailContainer/>} />
+      < Route path="/checkout" element={<Checkout/>}/>
       < Route path='/cart' element={< Cart />} />
-      <Route path="*" element= {<h1>ERROR 404 NOT FOUND </h1>}></Route>
+      < Route path="*" element= {<h1>ERROR 404 NOT FOUND </h1>}/>
     </Routes>
     </CartProvider>
     </BrowserRouter>
